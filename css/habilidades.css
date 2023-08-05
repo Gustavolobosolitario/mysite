@@ -1,0 +1,101 @@
+:root{
+  --cor-card-habilidades: hsl(352, 60%, 49%);
+  
+  
+}
+
+#habilidades h1{
+  text-align: center;
+  font-size: 1.5em;
+
+}
+
+
+#carrosel{
+  margin: auto;
+  margin-top: 10%;
+  display: flex;
+  align-items: center;
+}
+
+
+#carrosel{
+  /*width: 800px;*/
+  height: 350px;    
+  display: flex;
+  column-gap: 30px;
+  overflow-x: hidden;
+  justify-content: center;
+}
+
+
+#sombra{
+  width: 50%;
+  margin-left: 50%;
+  transform: translate(-50%, 0);
+  margin-top: 10px;
+  box-shadow: 10px 10px 20px 10px rgba(0, 0, 0, 0.7); 
+}
+
+
+#esquerda{
+  display: inline-block;
+  transform-origin: right;
+  transform: perspective(1000px) rotateY(-30deg);
+  order: 0;
+}
+
+
+.direita{
+  display: inline-block;
+  transform-origin: left;
+  transform: perspective(1000px) rotateY(30deg);
+  order: 2;
+}
+
+
+.centro{
+  display: inline-block;
+  order: 1;    
+}
+
+
+.habilidade{
+  /*height: 250px;
+  width: 250px;*/
+  height: 10vw;
+  width: 10vw;
+  border-radius: 20px;
+  background-color: var(--cor-card-habilidades);
+  display: inline-block;
+  text-align: center;
+  font-weight: bolder;
+  /*font-size: 5em;*/
+  font-size: 3vw;
+}
+
+
+.habilidade > p{
+  margin-top: 50%;
+  transform: translate(0px, -50%);
+}
+
+
+.hidden{
+  display: none;
+}
+
+
+#controle-carrosel-habilidades{
+  text-align: center;
+}
+
+
+#avancar, #voltar {
+  color: white;
+  font-size: 3em;
+  margin-right: 15px;
+}
+
+
+      

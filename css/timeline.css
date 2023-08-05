@@ -1,0 +1,89 @@
+#experiencia h1 {
+  text-align: center;
+  font-size: 3em;
+  margin-bottom: 80px;
+}
+
+.descricao_atividades, .titulo_cargo {
+  color: black;
+}
+
+#experiencia {
+  position: relative;
+  overflow: hidden;
+}
+
+#experiencia::after {
+  content: '';
+  position: absolute;
+  width: 6px;
+  background-color: white;
+  top: 80px;
+  bottom: 0;
+  left: 50%;
+  margin-left: -3px;
+}
+
+.container {
+  padding: 10px 40px;
+  position: relative;
+  width: 40%;
+  background-color: transparent;
+}
+
+.container::after {
+  content: '';
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  right: -17px;
+  background-color: white;
+  border: 4px solid #FF9F55;
+  top: 15px;
+  border-radius: 50%;
+}
+
+.left, .right {
+  box-sizing: border-box;
+  width: 50%;
+  position: relative;
+}
+
+.left {
+  right: 0;
+  transform: translateX(-0%);
+}
+
+.right {
+  left: 0;
+  transform: translateX(100%);
+}
+
+.left::before, .right::before {
+  content: " ";
+  position: absolute;
+  top: 22px;
+  border: medium solid white;
+}
+
+.left::before {
+  right: 30px;
+  border-width: 10px 0 10px 10px;
+  border-color: transparent transparent transparent white;
+}
+
+.right::before {
+  left: 30px;
+  border-width: 10px 10px 10px 0;
+  border-color: transparent white transparent transparent;
+}
+
+.right::after {
+  left: -16px;
+}
+
+.content {
+  padding: 20px 30px;
+  background-color: white;
+  border-radius: 6px;
+}
