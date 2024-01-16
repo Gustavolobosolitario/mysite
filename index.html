@@ -8,6 +8,164 @@
 	<link rel="stylesheet" type="text/css" href="css/timeline.css">
 	<link rel="stylesheet" type="text/css" href="css/projetos.css">
 </head>
+<style>
+	
+    /* Adicione estilos conforme necessário */
+    .habilidade {
+      cursor: pointer;
+    }
+    .clique {
+      transform: scale(0.9);
+      transition: transform 0.2s;
+    }
+
+	#carrosel {
+		display: flex;
+		overflow: hidden;
+	  }
+  
+	  
+  
+	  .sombra {
+		display: none;
+	  }
+  
+	  .hidden {
+		display: none;
+	  }
+  
+	  .visible {
+		display: flex;
+	  }
+
+
+
+
+	  #experiencia h1 {
+		text-align: center;
+		font-size: 3em;
+		margin-bottom: 80px;
+	  }
+	  
+	  .descricao_atividades, .titulo_cargo {
+		color: black;
+	  }
+	  
+	  #experiencia {
+		position: relative;
+		overflow: hidden;
+	  }
+	  
+	  #experiencia::after {
+		content: '';
+		position: absolute;
+		width: 6px;
+		background-color: white;
+		top: 80px;
+		bottom: 0;
+		left: 50%;
+		margin-left: -3px;
+	  }
+	  
+	  .container {
+		padding: 10px 40px;
+		position: relative;
+		width: 40%;
+		background-color: transparent;
+	  }
+	  
+	  .container::after {
+		content: '';
+		position: absolute;
+		width: 25px;
+		height: 25px;
+		right: -17px;
+		background-color: white;
+		border: 4px solid #FF9F55;
+		top: 15px;
+		border-radius: 50%;
+	  }
+	  
+	  .left, .right {
+		box-sizing: border-box;
+		width: 50%;
+		position: relative;
+	  }
+	  
+	  .left {
+		right: 0;
+		transform: translateX(-0%);
+	  }
+	  
+	  .right {
+		left: 0;
+		transform: translateX(100%);
+	  }
+	  
+	  .left::before, .right::before {
+		content: " ";
+		position: absolute;
+		top: 22px;
+		border: medium solid white;
+	  }
+	  
+	  .left::before {
+		right: 30px;
+		border-width: 10px 0 10px 10px;
+		border-color: transparent transparent transparent white;
+	  }
+	  
+	  .right::before {
+		left: 30px;
+		border-width: 10px 10px 10px 0;
+		border-color: transparent white transparent transparent;
+	  }
+	  
+	  .right::after {
+		left: -16px;
+	  }
+	  
+	  .content {
+		padding: 20px 30px;
+		background-color: white;
+		border-radius: 6px;
+	  }
+
+
+
+	  /* Adicione estas linhas ao seu arquivo CSS */
+.projeto-card {
+	position: relative;
+	transition: transform 0.5s ease-out;
+  }
+  
+  .projeto-card:hover {
+	transform: translateY(-8px);
+  }
+
+
+  
+.container {
+	transition: transform 0.3s ease-out;
+  }
+
+
+
+  
+
+  
+
+
+
+  /* Adicione estas linhas ao seu arquivo CSS */
+
+
+
+  
+
+	  /* Adicione estilos conforme necessário */
+	  
+  </style>
 <body>
 
 	
@@ -36,82 +194,208 @@
 
 		<section id="apresentacao">
 			<div id="mascara-texto-apresentacao">
-				<div id="texto-apresentacao">	
-					<p>Olá, tudo bem?|
-                    Prazer, Gustavo Farias 😀.|
-					Dev Fullstack, |
-					Analista de Power BI |
-					Desenvolvedor RPA| Dev Python.</p>
-
-					<a class="curriculo" href="#" onclick="window.open('Currículo l Gustavo Henrique Farias 2023.pdf');" style="transition: all 2s ease 0s; opacity: 1;">Baixar Curriculo</a>
-					
-				</div>
+			  <div id="texto-apresentacao">
+				<p>Olá, tudo bem?| Prazer, Gustavo Farias 😀.| Dev Fullstack, | Analista de Power BI | Desenvolvedor RPA| Dev Python.</p>
+				<a class="curriculo" href="#" onclick="window.open('Currículo l Gustavo Henrique Farias 2023.pdf');">Baixar Currículo</a>
+			  </div>
 			</div>
-		</section>
+		  </section>
+		  
+		  <script>
+			function typeWriter(elementos) {
 
+				console.log(elementos[0])
+			
+						  
+					   paragrafo_fatiado = elementos[0].innerHTML.split('')
+					   elementos[0].innerHTML = '';
+					   paragrafo_fatiado.forEach((letra, i) => {
+			
+						   setTimeout(() => {
+							if (letra == "|"){
+								elementos[0].innerHTML += "<br>"
+							  }
+							  else{
+								elementos[0].innerHTML += letra
+							  }
+			
+							  if (i == paragrafo_fatiado.length - 1){
+								  dowload_curriculo.style.transition = "all 2s"
+								  dowload_curriculo.style.opacity = '1'
+			
+							  }
+						}
+						  , 75 * i)
+					  })
+			
+			}
+			
+			
+			
+			const titulo = document.querySelectorAll('p')
+			var dowload_curriculo = document.querySelector('.curriculo')
+			
+													
+			typeWriter(titulo)
+			/*fim efeito d digitação*/
+			
+			
+			/*inicio efito de scrool suave*/
+			const menuLinks = document.querySelectorAll('#menu ul li a[href^="#"]');
+			  
+			
+			function getDistanceFromTheTop(element) {
+			  const id = element.getAttribute("href");
+			  return document.querySelector(id).offsetTop;
+			}
+			
+			
+			function scrollToSection(event) {
+				
+			  event.preventDefault();
+			  const distanceFromTheTop = getDistanceFromTheTop(event.target);
+			  smoothScrollTo(0, distanceFromTheTop, 1000);
+			}
+			
+			menuLinks.forEach((link) => {
+			  link.addEventListener("click", scrollToSection);
+			});
+			
+			function smoothScrollTo(endX, endY, duration) {
+			  const startX = window.scrollX || window.pageXOffset;
+			  const startY = window.scrollY || window.pageYOffset;
+			  const distanceX = endX - startX;
+			  const distanceY = endY - startY;
+			  const startTime = new Date().getTime();
+			
+			  duration = typeof duration !== "undefined" ? duration : 400;
+			
+			  const easeInOutQuart = (time, from, distance, duration) => {
+				if ((time /= duration / 2) < 1)
+				  return (distance / 2) * time * time * time * time + from;
+				return (-distance / 2) * ((time -= 2) * time * time * time - 2) + from;
+			  };
+			
+			  const timer = setInterval(() => {
+				const time = new Date().getTime() - startTime;
+				const newX = easeInOutQuart(time, startX, distanceX, duration);
+				const newY = easeInOutQuart(time, startY, distanceY, duration);
+				if (time >= duration) {
+				  clearInterval(timer);
+				}
+				window.scroll(newX, newY);
+			  }, 1000 / 60);
+			}
+
+
+
+			
+		  </script>
 
 
 
 		<section id="habilidades">
 			<h1>Habilidades</h1>
-		
+		  
 			<div id="carrosel">
-				<div class="centro">
-					<div class="habilidade">
-						<p>CSS</p>
-					</div>
-					<div class="sombra"></div>
+			  <div class="centro">
+				<div class="habilidade">
+				  <p>CSS</p>
 				</div>
-		
-				<div class="direita">
-					<div class="habilidade">
-						<p>JS</p>
-					</div>
-					<div class="sombra"></div>
+				<div class="sombra"></div>
+			  </div>
+		  
+			  <div class="direita">
+				<div class="habilidade">
+				  <p>JS</p>
 				</div>
-		
-				<div class="esquerda">
-					<div class="habilidade">
-						<p>HTML</p>
-					</div>
-					<div class="sombra"></div>
+				<div class="sombra"></div>
+			  </div>
+		  
+			  <div class="esquerda">
+				<div class="habilidade">
+				  <p>HTML</p>
 				</div>
+				<div class="sombra"></div>
+			  </div>
+		  
+			  <div class="esquerda">
+				<div class="habilidade">
+				  <p>POO</p>
+				</div>
+				<div class="sombra"></div>
+			  </div>
+		  
+			  <div class="esquerda">
+				<div class="habilidade">
+				  <p>Flask</p>
+				</div>
+				<div class="sombra"></div>
+			  </div>
+		  
+			  <div class="hidden">
+				<div class="habilidade">
+				  <p>Python</p>
+				</div>
+				<div class="sombra"></div>
+			  </div>
+		  
+			  <div class="hidden">
+				<div class="habilidade">
+				  <p>DAX</p>
+				</div>
+				<div class="sombra"></div>
+			  </div>
+		  
+			  <div class="hidden">
+				<div class="habilidade">
+				  <p>Mysql e SQL</p>
+				</div>
+				<div class="sombra"></div>
+			  </div>
+			</div>
+		  </section>
+		  
+		  <script>
+			// Obtém todos os elementos com a classe 'habilidade'
+			const habilidades = document.querySelectorAll('.habilidade');
+		  
+			// Adiciona um ouvinte de evento para cada habilidade
+			habilidades.forEach(habilidade => {
+			  habilidade.addEventListener('mouseover', () => {
+				habilidade.classList.add('clique');
+			  });
+		  
+			  habilidade.addEventListener('mouseout', () => {
+				habilidade.classList.remove('clique');
+			  });
+			});
 
-				<div class="esquerda">
-					<div class="habilidade">
-						<p>POO</p>
-					</div>
-					<div class="sombra"></div>
-				</div>
 
-				<div class="esquerda">
-					<div class="habilidade">
-						<p>Flask</p>
-					</div>
-					<div class="sombra"></div>
-				</div>
-		
-				<!-- Agrupamento de habilidades escondidas -->
-				<div class="hidden">
-					<div class="habilidade">
-						<p>Python</p>
-					</div>
-					<div class="sombra"></div>
-				</div>
-		
-				<div class="hidden">
-					<div class="habilidade">
-						<p>DAX</p>
-					</div>
-					<div class="sombra"></div>
-				</div>
-		
-				<div class="hidden">
-					<div class="habilidade">
-						<p>Mysql e SQL</p>
-					</div>
-					<div class="sombra"></div>
-				</div>
+			function playAudio(skill) {
+				// Adicione aqui a lógica para reproduzir o áudio da habilidade correspondente
+				console.log('Reproduzindo áudio para: ' + skill);
+			  }
+			
+			  // Obtém o elemento do carrossel
+			  const carrosel = document.getElementById('carrosel');
+			
+			  // Adiciona um ouvinte de evento quando o mouse entra no carrossel
+			  carrosel.addEventListener('mouseover', () => {
+				// Exibe todas as habilidades escondidas
+				document.querySelectorAll('.hidden').forEach(hidden => {
+				  hidden.classList.add('visible');
+				});
+			  });
+			
+			  // Adiciona um ouvinte de evento quando o mouse sai do carrossel
+			  carrosel.addEventListener('mouseout', () => {
+				// Esconde todas as habilidades escondidas
+				document.querySelectorAll('.hidden').forEach(hidden => {
+				  hidden.classList.remove('visible');
+				});
+			  });
+		  </script>
 		
 				<!-- Adicione outras habilidades escondidas aqui -->
 		
@@ -217,97 +501,94 @@
 
 		</section>
 		
+		
+		
 
 
 
 		<section id="projetos">
-
 			<h1>Projetos</h1>
-
+		  
 			<div id="all-projects">
-				
-			
-			<div id="aux1" onmousemove="gira_sombra(this)" onmouseleave="desgira_sombra(this)">
-				<a href="#" onclick="window.open('Jornada Python.pdf')" target="_blank">
-					<div  class="card-project">
-						<h2>Escritor</h2>
-						<p>
-							Escrevi livro sobre essa jornada estraordinaria com Python.
-							Mas este livro não é apenas sobre Python; é também sobre a comunidade
-							 incrível que a cerca. Através de grupos de estudo, fóruns e eventos.
-						</p>
-					</div>
+		  
+			  <div id="projeto1" class="projeto-card" onmousemove="gira_sombra(this)" onmouseleave="desgira_sombra(this)">
+				<a href="#" onclick="openPdf('Jornada Python.pdf')">
+				  <div class="card-project">
+					<h2>Escritor</h2>
+					<p>
+					  Escrevi livro sobre essa jornada extraordinária com Python.
+					  Mas este livro não é apenas sobre Python; é também sobre a comunidade
+					  incrível que a cerca. Através de grupos de estudo, fóruns e eventos.
+					</p>
+				  </div>
 				</a>
-
 				<div class="card-project-shadow"></div>
-			</div>
-
-			<div id="aux2" onmousemove="gira_sombra(this)" onmouseleave="desgira_sombra(this)">
-				<a href="#" onclick="window.open('previsaoacoes.pdf')" target="_blank">
-					<div class="card-project">
-						<h2>Previsão Mercado de Ações</h2>
-						<p>
-							Estou participando de um projeto empolgante: prever a evolução do mercado
-							 financeiro para maximizar ganhos e minimizar perdas. Utilizando 
-							 análise de dados e habilidades em Python.
-						
-						</p>
-					</div>
+			  </div>
+		  
+			  <div id="projeto2" class="projeto-card" onmousemove="gira_sombra(this)" onmouseleave="desgira_sombra(this)">
+				<a href="#" onclick="openPdf('previsaoacoes.pdf')">
+				  <div class="card-project">
+					<h2>Previsão Mercado de Ações</h2>
+					<p>
+					  Estou participando de um projeto empolgante: prever a evolução do mercado
+					  financeiro para maximizar ganhos e minimizar perdas. Utilizando
+					  análise de dados e habilidades em Python.
+					</p>
+				  </div>
 				</a>
-
 				<div class="card-project-shadow"></div>
-			</div>
-
-			
-			<div id="aux3" onmousemove="gira_sombra(this)" onmouseleave="desgira_sombra(this)">
-
+			  </div>
+		  
+			  <div id="projeto3" class="projeto-card" onmousemove="gira_sombra(this)" onmouseleave="desgira_sombra(this)">
 				<a href="https://youtu.be/EimGLo-W0wY" target="_blank">
-					<div class="card-project">
-						<h2>Desenvolvimento de Sites Fullstack</h2>
-
-						<p>
-							criar a experiência do usuário por meio de uma interface atraente e amigável,
-							 além de implementar a lógica de negócios e funcionalidades que tornam o site realmente poderoso.
-						</p>
-					</div>
+				  <div class="card-project">
+					<h2>Desenvolvimento de Sites Fullstack</h2>
+					<p>
+					  Criar a experiência do usuário por meio de uma interface atraente e amigável,
+					  além de implementar a lógica de negócios e funcionalidades que tornam o site realmente poderoso.
+					</p>
+				  </div>
 				</a>
-
 				<div class="card-project-shadow"></div>
-			</div>
-
-
-			<div id="aux1" onmousemove="gira_sombra(this)" onmouseleave="desgira_sombra(this)">
+			  </div>
+		  
+			  <div id="projeto4" class="projeto-card" onmousemove="gira_sombra(this)" onmouseleave="desgira_sombra(this)">
 				<a href="https://youtu.be/OnRYZ0P79ww" target="_blank">
-					<div  class="card-project">
-						<h2>Automação de Processos RPA</h2>
-						<p>
-							Automação de processos é uma revolucionária abordagem que nos permite
-							 automatizar atividades repetitivas e demoradas, desenvolvimento de scripts complexos .
-						</p>
-					</div>
+				  <div class="card-project">
+					<h2>Automação de Processos RPA</h2>
+					<p>
+					  Automação de processos é uma revolucionária abordagem que nos permite
+					  automatizar atividades repetitivas e demoradas, desenvolvimento de scripts complexos.
+					</p>
+				  </div>
 				</a>
-
 				<div class="card-project-shadow"></div>
-			</div>
-
-			<div id="aux2" onmousemove="gira_sombra(this)" onmouseleave="desgira_sombra(this)">
+			  </div>
+		  
+			  <div id="projeto5" class="projeto-card" onmousemove="gira_sombra(this)" onmouseleave="desgira_sombra(this)">
 				<a href="https://youtu.be/EyFG434650c" target="_blank">
-					<div class="card-project">
-						<h2>Análise de Dados</h2>
-						<p>
-							análise de dados, levantamento de necessidades e insights inteligentes, Esses insights
-							 serão a base para tomadas de decisão estratégicas, permitindo que nossas ações sejam 
-							 orientadas por informações sólidas e confiáveis.
-						</p>
-					</div>
+				  <div class="card-project">
+					<h2>Análise de Dados</h2>
+					<p>
+					  Análise de dados, levantamento de necessidades e insights inteligentes. Esses insights
+					  serão a base para tomadas de decisão estratégicas, permitindo que nossas ações sejam
+					  orientadas por informações sólidas e confiáveis.
+					</p>
+				  </div>
 				</a>
-
 				<div class="card-project-shadow"></div>
+			  </div>
+		  
 			</div>
-
-		</div>
-			
-		</section>
+		  </section>
+		  
+		  <script>
+			function openPdf(pdfFileName) {
+				window.open(pdfFileName, '_blank');
+			  }
+			  
+		  </script>
+		  
 
 	</main>
 	
