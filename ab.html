@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seu Título Aqui</title>
+    <!-- Adicione seus estilos CSS aqui -->
+</head>
+<style>
+    /* Reset de estilos para garantir consistência entre navegadores */
+* /* Reset de estilos para garantir consistência entre navegadores */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif; /* Altere conforme necessário */
+    line-height: 1.6;
+    background-color: #fff; /* Cor de fundo da página (branco) */
+    color: #fff; /* Cor do texto principal (branco) */
+}
+
+/* Seção de Projetos */
+#projetos {
+    padding: 40px;
+}
+
+h1 {
+    text-align: center;
+    color: #007bff; /* Cor do título principal */
+}
+
+#all-projects {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin-top: 20px;
+}
+
+.projeto-card {
+    width: 300px;
+    margin-bottom: 20px;
+    background-color: #fff; /* Cor de fundo do card (branco) */
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(128, 128, 128, 0.3); /* Sombra cinza */
+    transition: transform 0.3s;
+}
+
+.projeto-card:hover {
+    transform: translateY(-5px);
+}
+
+.card-project {
+    padding: 20px;
+}
+
+.card-project h2 {
+    color: #007bff; /* Cor do título do projeto */
+}
+
+.card-project p {
+    color: #666; /* Cor do texto do projeto */
+}
+
+.card-project-shadow {
+    height: 100%;
+    background: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0));
+    position: relative;
+    z-index: 1;
+    transition: background 0.3s;
+}
+
+.projeto-card:hover .card-project-shadow {
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0));
+}
+
+/* Botões adicionais */
+.button {
+    display: inline-block;
+    padding: 10px 20px;
+    margin: 10px;
+    font-size: 16px;
+    text-align: center;
+    text-decoration: none;
+    background-color: #007bff; /* Cor de fundo do botão */
+    color: #fff; /* Cor do texto do botão */
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.button:hover {
+    background-color: #0056b3; /* Cor de fundo do botão ao passar o mouse */
+}
+
+/* Rodapé */
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #333; /* Cor de fundo do rodapé */
+    color: #fff; /* Cor do texto do rodapé */
+}
+
+
+</style>
+
+<body>
+    <section id="projetos">
+        <h1>Projetos</h1>
+
+        <div id="all-projects">
+
+            <div id="projeto1" class="projeto-card" onmousemove="gira_sombra(this)" onmouseleave="desgira_sombra(this)">
+                <a href="#" onclick="openPdf('Jornada Python.pdf')">
+                    <div class="card-project">
+                        <h2>Escritor</h2>
+                        <p>
+                            Escrevi livro sobre essa jornada extraordinária com Python. Mas este livro não é apenas sobre Python; é também sobre a comunidade incrível que a cerca. Através de grupos de estudo, fóruns e eventos.
+                        </p>
+                    </div>
+                </a>
+                <div class="card-project-shadow"></div>
+            </div>
+
+            <div id="projeto2" class="projeto-card" onmousemove="gira_sombra(this)" onmouseleave="desgira_sombra(this)">
+                <a href="#" onclick="openPdf('previsaoacoes.pdf')">
+                    <div class="card-project">
+                        <h2>Previsão Mercado de Ações</h2>
+                        <p>
+                            Estou participando de um projeto empolgante: prever a evolução do mercado financeiro para maximizar ganhos e minimizar perdas. Utilizando análise de dados e habilidades em Python.
+                        </p>
+                    </div>
+                </a>
+                <div class="card-project-shadow"></div>
+            </div>
+
+            <div id="projeto3" class="projeto-card" onmousemove="gira_sombra(this)" onmouseleave="desgira_sombra(this)">
+                <a href="https://youtu.be/EimGLo-W0wY" target="_blank">
+                    <div class="card-project">
+                        <h2>Desenvolvimento de Sites Fullstack</h2>
+                        <p>
+                            Criar a experiência do usuário por meio de uma interface atraente e amigável, além de implementar a lógica de negócios e funcionalidades que tornam o site realmente poderoso.
+                        </p>
+                    </div>
+                </a>
+                <div class="card-project-shadow"></div>
+            </div>
+
+            <div id="projeto4" class="projeto-card" onmousemove="gira_sombra(this)" onmouseleave="desgira_sombra(this)">
+                <a href="https://youtu.be/OnRYZ0P79ww" target="_blank">
+                    <div class="card-project">
+                        <h2>Automação de Processos RPA</h2>
+                        <p>
+                            Automação de processos é uma revolucionária abordagem que nos permite automatizar atividades repetitivas e demoradas, desenvolvimento de scripts complexos.
+                        </p>
+                    </div>
+                </a>
+                <div class="card-project-shadow"></div>
+            </div>
+
+            
+
+        </div>
+    </section>
+
+    <!-- Botões adicionais -->
+    <button class="button" id="dashboardButton" onclick="openDashboard()">
+        <i class="fas fa-tachometer-alt"></i> Dashboard
+    </button>
+
+    <button class="button" id="rodapeButton" onclick="scrollToTop()">
+        Voltar ao Topo
+    </button>
+
+    <!-- Scripts no final do body para melhor desempenho -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/habilidades.js"></script>
+    <script src="js/timeline.js"></script>
+    <script src="js/projetos.js"></script>
+
+    <script>
+        // Adicione seus scripts personalizados aqui
+        function openPdf(pdfFileName) {
+            window.open(pdfFileName, '_blank');
+        }
+
+        function openDashboard() {
+            window.location.href = 'caminho/para/sua/pagina/dashboard.html';
+        }
+
+        function scrollToTop() {
+            smoothScrollTo(0, 0, 1000);
+        }
+
+        function smoothScrollTo(endX, endY, duration) {
+            const startX = window.scrollX || window.pageXOffset;
+            const startY = window.scrollY || window.pageYOffset;
+            const distanceX = endX - startX;
+            const distanceY = endY - startY;
+            const startTime = new Date().getTime();
+
+            duration = typeof duration !== "undefined" ? duration : 400;
+
+            const easeInOutQuart = (time, from, distance, duration) => {
+                if ((time /= duration / 2) < 1)
+                    return (distance / 2) * time * time * time * time + from;
+                return (
+                    (-distance / 2) * ((time -= 2) * time * time * time - 2) + from
+                );
+            };
+
+            const timer = setInterval(() => {
+                const time = new Date().getTime() - startTime;
+                const newX = easeInOutQuart(time, startX, distanceX, duration);
+                const newY = easeInOutQuart(time, startY, distanceY, duration);
+                if (time >= duration) {
+                    clearInterval(timer);
+                }
+                window.scroll(newX, newY);
+            }, 1000 / 60); // 60 fps
+        }
+    </script>
+
+    <footer>
+        <p>&copy; 2024 Sua Marca Registrada. Todos os direitos reservados.</p>
+    </footer>
+
+</body>
+
+</html>

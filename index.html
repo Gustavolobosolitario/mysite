@@ -9,35 +9,32 @@
 	<link rel="stylesheet" type="text/css" href="css/projetos.css">
 </head>
 <style>
+
+	
 	
     /* Adicione estilos conforme necessário */
-    .habilidade {
-      cursor: pointer;
-    }
-    .clique {
-      transform: scale(0.9);
-      transition: transform 0.2s;
-    }
+	.habilidade {
+		cursor: pointer;
+	}
+
+	.clique {
+		transform: scale(0.9);
+		transition: transform 0.2s;
+	}
 
 	#carrosel {
 		display: flex;
 		overflow: hidden;
-	  }
-  
-	  
-  
-	  .sombra {
-		display: none;
-	  }
-  
-	  .hidden {
-		display: none;
-	  }
-  
-	  .visible {
-		display: flex;
-	  }
+	}
 
+	.sombra,
+	.hidden {
+		display: none;
+	}
+
+	.visible {
+		display: flex;
+	}
 
 
 
@@ -132,22 +129,59 @@
 	  }
 
 
+	  .button {
+		background-color: black;
+		color: #ffffff; /* Cor do texto no botão */
+		padding: 10px 20px;
+		border: none;
+		border-radius: 5px;
+		cursor: pointer;
+		transition: background-color 0.3s ease;
+		font-size: 18px;
+	  }
+	
+	  .button:hover {
+		background-color: #001a33; /* Cor de fundo quando o mouse está sobre o botão */
+	  }
+	
+	  .button:active {
+		background-color: #004080; /* Cor de fundo quando o botão está pressionado */
+	  }
 
-	  /* Adicione estas linhas ao seu arquivo CSS */
-.projeto-card {
-	position: relative;
-	transition: transform 0.5s ease-out;
-  }
+/* Estilos para os vídeos e contêiner de vídeo */
+.video-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.video {
+    margin: 20px;
+    text-align: center;
+}
+
+
+
+#rodapeButton {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 999;
+	background-color: #0a0a0a;
+    /* Adicione estilos adicionais conforme necessário */
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #0a0a0a;
+    color: #fff; /* Cor do texto branco */
+    /* Adicione estilos adicionais conforme necessário */
+}
+
+
+
   
-  .projeto-card:hover {
-	transform: translateY(-8px);
-  }
-
-
-  
-.container {
-	transition: transform 0.3s ease-out;
-  }
 
 
 
@@ -294,108 +328,141 @@
 
 
 
-		<section id="habilidades">
+		  <section id="habilidades">
 			<h1>Habilidades</h1>
-		  
-			<div id="carrosel">
-			  <div class="centro">
-				<div class="habilidade">
-				  <p>CSS</p>
+	
+			<div id="carrosel" onmouseover="showHiddenSkills()" onmouseout="hideHiddenSkills()">
+				<div class="centro" onmouseover="playAudio('CSS')">
+					<div class="habilidade">
+						<p>CSS</p>
+					</div>
+					<div class="sombra"></div>
 				</div>
-				<div class="sombra"></div>
-			  </div>
-		  
-			  <div class="direita">
-				<div class="habilidade">
-				  <p>JS</p>
+	
+				<div class="direita" onmouseover="playAudio('JS')">
+					<div class="habilidade">
+						<p>JS</p>
+					</div>
+					<div class="sombra"></div>
 				</div>
-				<div class="sombra"></div>
-			  </div>
-		  
-			  <div class="esquerda">
-				<div class="habilidade">
-				  <p>HTML</p>
+	
+				<div class="esquerda" onmouseover="playAudio('HTML')">
+					<div class="habilidade">
+						<p>HTML</p>
+					</div>
+					<div class="sombra"></div>
 				</div>
-				<div class="sombra"></div>
-			  </div>
-		  
-			  <div class="esquerda">
-				<div class="habilidade">
-				  <p>POO</p>
+	
+				<!-- Adicione outras habilidades conforme necessário -->
+	
+				<div class="hidden" onmouseover="playAudio('Python')">
+					<div class="habilidade">
+						<p>Python</p>
+					</div>
+					<div class="sombra"></div>
 				</div>
-				<div class="sombra"></div>
-			  </div>
-		  
-			  <div class="esquerda">
-				<div class="habilidade">
-				  <p>Flask</p>
+	
+				<div class="hidden" onmouseover="playAudio('Power BI')">
+					<div class="habilidade">
+						<p>BI</p>
+					</div>
+					<div class="sombra"></div>
 				</div>
-				<div class="sombra"></div>
-			  </div>
-		  
-			  <div class="hidden">
-				<div class="habilidade">
-				  <p>Python</p>
+
+				<div class="hidden" onmouseover="playAudio('Power BI')">
+					<div class="habilidade">
+						<p>POO</p>
+					</div>
+					<div class="sombra"></div>
 				</div>
-				<div class="sombra"></div>
-			  </div>
-		  
-			  <div class="hidden">
-				<div class="habilidade">
-				  <p>DAX</p>
+
+				<div class="hidden" onmouseover="playAudio('Power BI')">
+					<div class="habilidade">
+						<p>Flask</p>
+					</div>
+					<div class="sombra"></div>
 				</div>
-				<div class="sombra"></div>
-			  </div>
-		  
-			  <div class="hidden">
-				<div class="habilidade">
-				  <p>Mysql e SQL</p>
+
+				<div class="hidden" onmouseover="playAudio('Power BI')">
+					<div class="habilidade">
+						<p>Python</p>
+					</div>
+					<div class="sombra"></div>
 				</div>
-				<div class="sombra"></div>
-			  </div>
+
+				<div class="hidden" onmouseover="playAudio('Power BI')">
+					<div class="habilidade">
+						<p>DAX</p>
+					</div>
+					<div class="sombra"></div>
+				</div>
+
+				<div class="hidden" onmouseover="playAudio('Power BI')">
+					<div class="habilidade">
+						<p>DJANGO</p>
+					</div>
+					<div class="sombra"></div>
+				</div>
+
+				<div class="hidden" onmouseover="playAudio('Power BI')">
+					<div class="habilidade">
+						<p>BIGDATA</p>
+					</div>
+					<div class="sombra"></div>
+				</div>
+
+				<div class="hidden" onmouseover="playAudio('Power BI')">
+					<div class="habilidade">
+						<p>EXCEL</p>
+					</div>
+					<div class="sombra"></div>
+				</div>
+
+				<div class="hidden" onmouseover="playAudio('Power BI')">
+					<div class="habilidade">
+						<p>Mysql</p>
+					</div>
+					<div class="sombra"></div>
+				</div>
+
+				<div class="hidden" onmouseover="playAudio('Power BI')">
+					<div class="habilidade">
+						<p>SQL</p>
+					</div>
+					<div class="sombra"></div>
+				</div>
 			</div>
-		  </section>
-		  
-		  <script>
-			// Obtém todos os elementos com a classe 'habilidade'
+		</section>
+		<script>
 			const habilidades = document.querySelectorAll('.habilidade');
-		  
-			// Adiciona um ouvinte de evento para cada habilidade
+	
 			habilidades.forEach(habilidade => {
-			  habilidade.addEventListener('mouseover', () => {
-				habilidade.classList.add('clique');
-			  });
-		  
-			  habilidade.addEventListener('mouseout', () => {
-				habilidade.classList.remove('clique');
-			  });
+				habilidade.addEventListener('mouseover', () => {
+					habilidade.classList.add('clique');
+				});
+	
+				habilidade.addEventListener('mouseout', () => {
+					habilidade.classList.remove('clique');
+				});
 			});
-
-
+	
+			function showHiddenSkills() {
+				document.querySelectorAll('.hidden').forEach(hidden => {
+					hidden.classList.add('visible');
+				});
+			}
+	
+			function hideHiddenSkills() {
+				document.querySelectorAll('.hidden').forEach(hidden => {
+					hidden.classList.remove('visible');
+				});
+			}
+	
 			function playAudio(skill) {
-				// Adicione aqui a lógica para reproduzir o áudio da habilidade correspondente
 				console.log('Reproduzindo áudio para: ' + skill);
-			  }
-			
-			  // Obtém o elemento do carrossel
-			  const carrosel = document.getElementById('carrosel');
-			
-			  // Adiciona um ouvinte de evento quando o mouse entra no carrossel
-			  carrosel.addEventListener('mouseover', () => {
-				// Exibe todas as habilidades escondidas
-				document.querySelectorAll('.hidden').forEach(hidden => {
-				  hidden.classList.add('visible');
-				});
-			  });
-			
-			  // Adiciona um ouvinte de evento quando o mouse sai do carrossel
-			  carrosel.addEventListener('mouseout', () => {
-				// Esconde todas as habilidades escondidas
-				document.querySelectorAll('.hidden').forEach(hidden => {
-				  hidden.classList.remove('visible');
-				});
-			  });
-		  </script>
+				// Adicione aqui a lógica para reproduzir o áudio da habilidade correspondente
+			}
+		</script>
 		
 				<!-- Adicione outras habilidades escondidas aqui -->
 		
@@ -481,23 +548,122 @@
 
 			<div class="container right">
 				<div class="content">
-					<h2 class="titulo_cargo">Desenvolvedor RPA Pleno</h2>
-					<p class="descricao_atividades">
-						Na Nick Saude, exerci a função de desenvolvedor RPA, automatizando processos na área da saúde. Desenvolvi 
-						bots para conferência de elegibilidade de pacientes, verificando pagamentos, planos de saúde e informações 
-						em várias plataformas de saúde. Além disso, criei bots de autorização para verificar a compatibilidade dos 
-						planos com os procedimentos médicos, coberturas e carências.
-						Um projeto inovador foi o bot capaz de quebrar o recaptcha de forma sonora, interpretando e convertendo áudio
-						 em texto para acessar a plataforma. Também implementei inteligência artificial para lidar com outros tipos de
-						  recaptcha. Utilizei técnicas de raspagem (web scraping) com JavaScript para automatizar algumas plataformas,
-						   e o uso do "uc.Chrome()" foi uma abordagem encontrada para mascarar a ação do robô durante a execução das 
-						   tarefas na plataforma.
-						<br><br>
-						 Ferramentas utilizadas: 
-						Python, Javascript , Selenium, UiPath, Git, Docker, AWS, Lambda, Jira.
-					</p>
+					<h2 class="titulo_cargo">Experiencia como Desenvolvedor RPA Pleno (PJ)</h2>
+<p class="descricao_atividades">
+    <strong>Período:</strong> Contrato de Projeto<br>
+    <strong>Cidade:</strong> São Carlos SP<br>
+    <strong>Formato:</strong> PJ<br>
+    <strong>Empresa:</strong> Nick Saude<br><br>
+    
+    Sou um Desenvolvedor RPA Pleno, contribuindo de maneira estratégica na automação de processos na [Nome da Empresa]. Minha atuação abrange o desenvolvimento de bots especializados para otimizar operações e extrair insights valiosos dos dados disponíveis.<br><br>
+
+    <strong>Responsabilidades Principais:</strong>
+    - Desenvolvimento de robôs com ênfase em automação de processos utilizando ferramentas como [Nome das Ferramentas RPA].
+    - Colaboração estreita com equipes para identificar oportunidades de automação e implementação de soluções eficazes.
+    - Adoção de modelos ágeis, como Scrum, para garantir agilidade e eficiência nos projetos.
+    - Desenvolvimento de bots atendidos e não atendidos, proporcionando soluções inovadoras que otimizam as operações da empresa.
+    - Documentação técnica e de negócios relacionadas às soluções de automação desenvolvidas.<br><br>
+
+    <strong>Conquistas e Resultados:</strong>
+    - Implementação eficaz de automações nos processos, com destaque para a automação do processo de autenticação de pacientes.
+    - Desenvolvimento de automações para autenticação de pacientes, reconhecimento de elegibilidade e análise de autorização.
+    - Realização de melhorias significativas na eficiência operacional e na extração de insights por meio da automação.<br><br>
+
+
+    <strong>Habilidades Adquiridas:</strong>
+    - Automação de Processos.
+    - Desenvolvimento de Sistemas RPA.
+    - Análise de Dados.
+    - Colaboração em Equipes Ágeis.
+    - Resolução de Problemas em Automação.
+    - Documentação Técnica.<br><br>
+
+    <strong>Ferramentas Utilizadas:</strong> RPA, UiPath, Automation Anywhere.<br>
+    <strong>Linguagens:</strong> Python, Javascript, C#<br>
+    <strong>Outras Habilidades:</strong> AWS, Git, Docker, Oracle.
+</p>
+
+
+
 				</div>
 			</div>
+			<div class="container left" >
+				<div class="content">
+					<h2 class="titulo_cargo">Experiencia como Gerente de Automação de Processos e Análise de Dados (PJ)</h2>
+<p class="descricao_atividades">
+    <strong>Período:</strong> 07/2023 – Momento<br>
+    <strong>Cidade:</strong> São Carlos<br>
+    <strong>Formato:</strong> PJ<br>
+    <strong>Empresa:</strong> Core Data and Technology<br><br>
+
+    Sou responsável por liderar uma equipe de desenvolvimento para automatizar processos empresariais e extrair insights valiosos dos dados disponíveis. Trabalho em conjunto com a equipe para identificar oportunidades de automação e implementar soluções eficazes, utilizando ferramentas avançadas como Selenium e AWS Lambda. Adotamos um modelo de trabalho baseado em Scrum para garantir a agilidade e eficiência em nossos projetos. Desenvolvo robôs tanto atendidos como não atendidos, criando soluções inovadoras que otimizam as operações da empresa.<br><br>
+
+    <strong>Habilidades e Atividades Principais:</strong><br>
+    - Selenium;<br>
+    - AWS Lambda;<br>
+    - Modelo de trabalho baseado em Scrum;<br>
+    - Desenvolvimento de robôs atendidos e não atendidos;<br>
+    - Documentação técnica e de negócios relacionadas às soluções de automação desenvolvidas;<br>
+    - Testar e depurar soluções de automação para garantir que funcionem conforme o esperado;<br>
+    - Web, incluindo a criação e execução de scripts de teste automatizados;<br>
+    - Habilidade em resolução de problemas e análise de dados;<br>
+    - Habilidade em comunicação e colaboração com outros membros da equipe e partes interessadas externas;<br>
+    - Criação e manutenção de scripts em Python para a extração de dados (web scraping);<br>
+    - ETL dos dados capturados e upload para S3 bem como o banco MySQL;<br>
+    - AWS Lambda e Step Functions;<br>
+    - Consumo e criação de APIs REST;<br>
+    - Javascript;<br>
+    - HTML;<br>
+    - CSS.
+</p>
+
+
+    <strong>Ferramentas utilizadas:</strong> Python, HTML:5, CSS, JavaScript, RPA, SQL, EXCEL, BIGDATA.
+</p>
+
+
+				</div>
+			</div>
+			<div class="container right">
+				<div class="content">
+					<h2 class="titulo_cargo">Experiencia como Analista e Desenvolvedor de Sistemas Senior (PJ)</h2>
+<p class="descricao_atividades">
+    <strong>Período:</strong> 11/2023 – Atualmente<br>
+    <strong>Cidade:</strong> São Carlos<br>
+    <strong>Formato:</strong> PJ<br>
+    <strong>Empresa:</strong> Saffi Consultoria e Treinamentos<br><br>
+
+    Sou um Analista e Desenvolvedor de Sistemas Sênior, atuando de forma estratégica na Saffi Consultoria e Treinamentos. Especializado em análise, design e implementação de soluções tecnológicas inovadoras, destaco-me pela liderança ágil e eficaz colaboração em equipes multifuncionais.<br><br>
+
+    <strong>Responsabilidades Principais:</strong><br>
+    - Desenvolvimento full-stack com proficiência em HTML, CSS, Javascript, PHP, React, MongoDB, Node.js e práticas avançadas de versionamento com GIT.<br>
+    - Especialista em Power BI e Python, incluindo a expertise em BUbble NOW CODE.<br>
+    - Análise de dados, desenvolvimento de sistemas e gerenciamento de infraestrutura.<br>
+    - Automação de processos, administração de licenças, gestão de redes sociais e manutenção do site.<br>
+    - Garantia de uma infraestrutura de WiFi eficiente.<br>
+    - Implementação de sistemas ERP e busca contínua por melhorias de processos.<br>
+    - Trabalho com APIs e metodologias ágeis, como Jira.<br><br>
+
+    <strong>Conquistas e Resultados:</strong><br>
+    - Implementação eficaz de automações nos processos comerciais, especialmente no gerenciamento de oportunidades, otimizando a distribuição de leads e reduzindo o tempo do gestor.<br>
+    - Desenvolvimento de automações para classificação de contatos, segmentando-os em categorias quentes, frios e mornos, contribuindo para estratégias específicas de abordagem e conversão em clientes.<br>
+    - Melhorias significativas no aplicativo oficial da empresa, desde o gerenciamento de usuários até o suporte técnico.<br><br>
+
+    <strong>Setores:</strong><br>
+    - Trabalhei com uma variedade de clientes e setores, incluindo empresas comerciais, financeiras e de projetos.<br><br>
+
+    <strong>Habilidades Adquiridas:</strong><br>
+    - Automação de Processos.<br>
+    - Desenvolvimento de Sistemas.<br>
+    - Gerenciamento de infraestrutura.<br>
+    - Análise de dados.<br>
+    - Controle de acesso.<br>
+    - Gestão de usuários.<br>
+    - Feedbacks de melhorias.<br><br>
+
+    <strong>Ferramentas utilizadas:</strong> Python, HTML:5, CSS, JavaScript, RPA, SQL, EXCEL, BIGDATA.
+</p>
+
 
 		</section>
 		
@@ -516,9 +682,7 @@
 				  <div class="card-project">
 					<h2>Escritor</h2>
 					<p>
-					  Escrevi livro sobre essa jornada extraordinária com Python.
-					  Mas este livro não é apenas sobre Python; é também sobre a comunidade
-					  incrível que a cerca. Através de grupos de estudo, fóruns e eventos.
+					  Escrevi livro sobre essa jornada extraordinária com Python. Mas este livro não é apenas sobre Python; é também sobre a comunidade incrível que a cerca. Através de grupos de estudo, fóruns e eventos.
 					</p>
 				  </div>
 				</a>
@@ -530,9 +694,7 @@
 				  <div class="card-project">
 					<h2>Previsão Mercado de Ações</h2>
 					<p>
-					  Estou participando de um projeto empolgante: prever a evolução do mercado
-					  financeiro para maximizar ganhos e minimizar perdas. Utilizando
-					  análise de dados e habilidades em Python.
+					  Estou participando de um projeto empolgante: prever a evolução do mercado financeiro para maximizar ganhos e minimizar perdas. Utilizando análise de dados e habilidades em Python.
 					</p>
 				  </div>
 				</a>
@@ -544,8 +706,7 @@
 				  <div class="card-project">
 					<h2>Desenvolvimento de Sites Fullstack</h2>
 					<p>
-					  Criar a experiência do usuário por meio de uma interface atraente e amigável,
-					  além de implementar a lógica de negócios e funcionalidades que tornam o site realmente poderoso.
+					  Criar a experiência do usuário por meio de uma interface atraente e amigável, além de implementar a lógica de negócios e funcionalidades que tornam o site realmente poderoso.
 					</p>
 				  </div>
 				</a>
@@ -557,87 +718,163 @@
 				  <div class="card-project">
 					<h2>Automação de Processos RPA</h2>
 					<p>
-					  Automação de processos é uma revolucionária abordagem que nos permite
-					  automatizar atividades repetitivas e demoradas, desenvolvimento de scripts complexos.
+					  Automação de processos é uma revolucionária abordagem que nos permite automatizar atividades repetitivas e demoradas, desenvolvimento de scripts complexos.
 					</p>
 				  </div>
 				</a>
 				<div class="card-project-shadow"></div>
 			  </div>
 		  
-			  <div id="projeto5" class="projeto-card" onmousemove="gira_sombra(this)" onmouseleave="desgira_sombra(this)">
-				<a href="https://youtu.be/EyFG434650c" target="_blank">
-				  <div class="card-project">
-					<h2>Análise de Dados</h2>
-					<p>
-					  Análise de dados, levantamento de necessidades e insights inteligentes. Esses insights
-					  serão a base para tomadas de decisão estratégicas, permitindo que nossas ações sejam
-					  orientadas por informações sólidas e confiáveis.
-					</p>
-				  </div>
-				</a>
-				<div class="card-project-shadow"></div>
-			  </div>
-		  
+			  
 			</div>
 		  </section>
 		  
-		  <script>
+		  <script><section id="projetos">
+			<h1>Projetos</h1>
+		  
+			<div id="all-projects">
+		  
+			  <div id="projeto1" class="projeto-card" onmousemove="gira_sombra(this)" onmouseleave="desgira_sombra(this)">
+				<a href="#" onclick="openPdf('Jornada Python.pdf')">
+				  <div class="card-project">
+					<h2>Escritor</h2>
+					<p>
+					  Escrevi livro sobre essa jornada extraordinária com Python. Mas este livro não é apenas sobre Python; é também sobre a comunidade incrível que a cerca. Através de grupos de estudo, fóruns e eventos.
+					</p>
+				  </div>
+				</a>
+				<div class="card-project-shadow"></div>
+			  </div>
+		  
+			  <div id="projeto2" class="projeto-card" onmousemove="gira_sombra(this)" onmouseleave="desgira_sombra(this)">
+				<a href="#" onclick="openPdf('previsaoacoes.pdf')">
+				  <div class="card-project">
+					<h2>Previsão Mercado de Ações</h2>
+					<p>
+					  Estou participando de um projeto empolgante: prever a evolução do mercado financeiro para maximizar ganhos e minimizar perdas. Utilizando análise de dados e habilidades em Python.
+					</p>
+				  </div>
+				</a>
+				<div class="card-project-shadow"></div>
+			  </div>
+		  
+			  <div id="projeto3" class="projeto-card" onmousemove="gira_sombra(this)" onmouseleave="desgira_sombra(this)">
+				<a href="https://youtu.be/EimGLo-W0wY" target="_blank">
+				  <div class="card-project">
+					<h2>Desenvolvimento de Sites Fullstack</h2>
+					<p>
+					  Criar a experiência do usuário por meio de uma interface atraente e amigável, além de implementar a lógica de negócios e funcionalidades que tornam o site realmente poderoso.
+					</p>
+				  </div>
+				</a>
+				<div class="card-project-shadow"></div>
+			  </div>
+		  
+			  <div id="projeto4" class="projeto-card" onmousemove="gira_sombra(this)" onmouseleave="desgira_sombra(this)">
+				<a href="https://youtu.be/OnRYZ0P79ww" target="_blank">
+				  <div class="card-project">
+					<h2>Automação de Processos RPA</h2>
+					<p>
+					  Automação de processos é uma revolucionária abordagem que nos permite automatizar atividades repetitivas e demoradas, desenvolvimento de scripts complexos.
+					</p>
+				  </div>
+				</a>
+				<div class="card-project-shadow"></div>
+			  </div>
+		  
+			  
+		  
+			  
+			</div>
+
+			
+
+			
+		  </section>
+
 			function openPdf(pdfFileName) {
 				window.open(pdfFileName, '_blank');
 			  }
 			  
 		  </script>
-		  
 
-	</main>
+		  <button class="button" id="rodapeButton" onclick="scrollToTop()">
+			Voltar ao Topo
+		</button>
+
+		  <!-- Botões adicionais -->
+		<button class="button" id="dashboardButton" onclick="openDashboard()">
+			<i class="fas fa-tachometer-alt"></i> Conheça Meu Portifolio
+		</button>
+
+		</section>
+
+		<!-- Botões adicionais -->
+		<button class="button" id="dashboardButton" onclick="openDashboard()">
+			<i class="fas fa-tachometer-alt"></i> Conheça Meu Portifolio
+		</button>
 	
-	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-	<script src="path/to/sideex-dialog-interceptor.js"></script>
-	<script src="caminho/para/font-awesome-kit-loader.js"></script>
-	<script src="https://kit.fontawesome.com/b78cb518f6.js" crossorigin="anonymous"></script>
-	<script src="js/main.js"></script>
-	<script src="js/habilidades.js"></script>
-	<script src="js/timeline.js"></script>
-	<script src="js/projetos.js"></script>
-
-	<script>
-	$(document).ready(function() {
-		// Configuração do carrossel
-		var carrosel = $("#carrosel");
-		var habilidades = carrosel.children(".centro, .direita, .esquerda, .hidden");
-		var numHabilidades = habilidades.length;
-		var currentIndex = 0;
-	  
-		// Função para exibir as habilidades atuais (3 no total)
-		function showCurrent() {
-		  habilidades.hide();
-		  for (var i = currentIndex; i < currentIndex + 6; i++) {
-			habilidades.eq(i % numHabilidades).show();
-		  }
-		}
-	  
-		// Navegação para a direita
-		$("#avancar").on("click", function(e) {
-		  e.preventDefault();
-		  currentIndex = (currentIndex + 1) % numHabilidades;
-		  showCurrent();
-		});
-	  
-		// Navegação para a esquerda
-		$("#voltar").on("click", function(e) {
-		  e.preventDefault();
-		  currentIndex = (currentIndex - 1 + numHabilidades) % numHabilidades;
-		  showCurrent();
-		});
-	  
-		// Inicializa o carrossel exibindo as 3 primeiras habilidades
-		showCurrent();
-	  });
-	</script>
-
+		<button class="button" id="rodapeButton" onclick="scrollToTop()">
+			Voltar ao Topo
+		</button>
 	
-	  
+		<!-- Scripts no final do body para melhor desempenho -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="js/main.js"></script>
+<script src="js/habilidades.js"></script>
+<script src="js/timeline.js"></script>
+<script src="js/projetos.js"></script>
+
+<script>
+    // Adicione seus scripts personalizados aqui
+    function openDashboard() {
+        window.location.href = 'dashboard.html';
+    }
+
+    function scrollToTop() {
+        smoothScrollTo(0, 0, 1000);
+    }
+
+    // Função de rolagem suave semelhante à que você já possui
+    function smoothScrollTo(endX, endY, duration) {
+        const startX = window.scrollX || window.pageXOffset;
+        const startY = window.scrollY || window.pageYOffset;
+        const distanceX = endX - startX;
+        const distanceY = endY - startY;
+        const startTime = new Date().getTime();
+
+        duration = typeof duration !== "undefined" ? duration : 400;
+
+        const easeInOutQuart = (time, from, distance, duration) => {
+            if ((time /= duration / 2) < 1)
+                return (distance / 2) * time * time * time * time + from;
+            return (
+                (-distance / 2) * ((time -= 2) * time * time * time - 2) + from
+            );
+        };
+
+        const timer = setInterval(() => {
+            const time = new Date().getTime() - startTime;
+            const newX = easeInOutQuart(time, startX, distanceX, duration);
+            const newY = easeInOutQuart(time, startY, distanceY, duration);
+            if (time >= duration) {
+                clearInterval(timer);
+            }
+            window.scroll(newX, newY);
+        }, 1000 / 60); // 60 fps
+    }
+</script>
+<footer>
+    <p>&copy; 2024 Sua Marca Registrada. Todos os direitos reservados.</p>
+</footer>
+
 
 </body>
+
+
+
+<footer>
+    <p>&copy; 2024 Gustavo Farias. Todos os direitos reservados.</p>
+</footer>
+
 </html>
