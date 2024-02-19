@@ -1,164 +1,169 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Gustavo Henrique Farias</title>
-	<meta charset="utf-8">
-	<link rel="stylesheet" type="text/css" href="css/main_css.css">
-	<link rel="stylesheet" type="text/css" href="css/habilidades.css">
-	<link rel="stylesheet" type="text/css" href="css/timeline.css">
-	<link rel="stylesheet" type="text/css" href="css/projetos.css">
-</head>
-<style>
-	.habilidade {
-		cursor: pointer;
-		width: 100px; /* Largura ajustável conforme necessário */
-		height: 100px; /* Altura ajustável conforme necessário */
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		background-color: rgb(189, 48, 48); /* Fundo vermelho */
-		margin: -5px;
-		border-radius: 5px;
-		font-size: 24px; /* Tamanho da fonte ajustável conforme necessário */
-		color: #fff; /* Cor do texto branca */
-		transition: transform 0.2s;
-	  }
+    <meta charset="UTF-8">
+    <title>Gustavo Henrique Farias</title>
+    <link rel="stylesheet" type="text/css" href="css/main_css.css">
+    <link rel="stylesheet" type="text/css" href="css/habilidades.css">
+    <link rel="stylesheet" type="text/css" href="css/timeline.css">
+    <link rel="stylesheet" type="text/css" href="css/projetos.css">
+    <style>
+	/* Styles for Larger Screens */
 
-	  .h1 {
-		font-size: 80px; /* Tamanho da fonte ajustável conforme necessário */
+.habilidade {
+    cursor: pointer;
+    width: 100px;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(189, 48, 48);
+    margin: -5px;
+    border-radius: 5px;
+    font-size: 24px;
+    color: #fff;
+    transition: transform 0.2s;
+}
 
-	  }
-  
-  
-	  .clique {
-		transform: scale(0.9);
-		transition: transform 0.2s;
-	  }
-  
-	  #carrosel {
-		display: flex;
-		overflow: hidden;
-	  }
-  
-	  .sombra,
-	  .hidden {
-		display: flex; /* Mostrar todas as habilidades o tempo todo */
-	  }
-  
-	  .visible {
-		display: flex;
-	  }
-	  #experiencia h1 {
-		text-align: center;
-		font-size: 3em;
-		margin-bottom: 80px;
-	  }
-	  
-	  .descricao_atividades, .titulo_cargo {
-		color: black;
-	  }
-	  
-	  #experiencia {
-		position: relative;
-		overflow: hidden;
-	  }
-	  
-	  #experiencia::after {
-		content: '';
-		position: absolute;
-		width: 6px;
-		background-color: white;
-		top: 80px;
-		bottom: 0;
-		left: 50%;
-		margin-left: -3px;
-	  }
-	  
-	  .container {
-		padding: 10px 40px;
-		position: relative;
-		width: 40%;
-		background-color: transparent;
-	  }
-	  
-	  .container::after {
-		content: '';
-		position: absolute;
-		width: 25px;
-		height: 25px;
-		right: -17px;
-		background-color: white;
-		border: 4px solid #FF9F55;
-		top: 15px;
-		border-radius: 50%;
-	  }
-	  
-	  .left, .right {
-		box-sizing: border-box;
-		width: 50%;
-		position: relative;
-	  }
-	  
-	  .left {
-		right: 0;
-		transform: translateX(-0%);
-	  }
-	  
-	  .right {
-		left: 0;
-		transform: translateX(100%);
-	  }
-	  
-	  .left::before, .right::before {
-		content: " ";
-		position: absolute;
-		top: 22px;
-		border: medium solid white;
-	  }
-	  
-	  .left::before {
-		right: 30px;
-		border-width: 10px 0 10px 10px;
-		border-color: transparent transparent transparent white;
-	  }
-	  
-	  .right::before {
-		left: 30px;
-		border-width: 10px 10px 10px 0;
-		border-color: transparent white transparent transparent;
-	  }
-	  
-	  .right::after {
-		left: -16px;
-	  }
-	  
-	  .content {
-		padding: 20px 30px;
-		background-color: white;
-		border-radius: 6px;
-	  }
+.h1 {
+    font-size: 80px; /* Adjustable font size as needed */
+}
 
+.clique {
+    transform: scale(0.9);
+    transition: transform 0.2s;
+}
 
-	  .button {
-		background-color: black;
-		color: #ffffff; /* Cor do texto no botão */
-		padding: 10px 20px;
-		border: none;
-		border-radius: 5px;
-		cursor: pointer;
-		transition: background-color 0.3s ease;
-		font-size: 18px;
-	  }
-	
-	  .button:hover {
-		background-color: #001a33; /* Cor de fundo quando o mouse está sobre o botão */
-	  }
-	
-	  .button:active {
-		background-color: #004080; /* Cor de fundo quando o botão está pressionado */
-	  }
+#carrosel {
+    display: flex;
+    overflow: hidden;
+}
 
-/* Estilos para os vídeos e contêiner de vídeo */
+.sombra,
+.hidden {
+    display: flex; /* Show all skills all the time */
+}
+
+.visible {
+    display: flex;
+}
+
+#experiencia h1 {
+    text-align: center;
+    font-size: 3em;
+    margin-bottom: 80px;
+}
+
+.descricao_atividades,
+.titulo_cargo {
+    color: black;
+}
+
+#experiencia {
+    position: relative;
+    overflow: hidden;
+}
+
+#experiencia::after {
+    content: '';
+    position: absolute;
+    width: 6px;
+    background-color: white;
+    top: 80px;
+    bottom: 0;
+    left: 50%;
+    margin-left: -3px;
+}
+
+.container {
+    padding: 10px 40px;
+    position: relative;
+    width: 40%;
+    background-color: transparent;
+}
+
+.container::after {
+    content: '';
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    right: -17px;
+    background-color: white;
+    border: 4px solid #FF9F55;
+    top: 15px;
+    border-radius: 50%;
+}
+
+.left,
+.right {
+    box-sizing: border-box;
+    width: 50%;
+    position: relative;
+}
+
+.left {
+    right: 0;
+    transform: translateX(-0%);
+}
+
+.right {
+    left: 0;
+    transform: translateX(100%);
+}
+
+.left::before,
+.right::before {
+    content: " ";
+    position: absolute;
+    top: 22px;
+    border: medium solid white;
+}
+
+.left::before {
+    right: 30px;
+    border-width: 10px 0 10px 10px;
+    border-color: transparent transparent transparent white;
+}
+
+.right::before {
+    left: 30px;
+    border-width: 10px 10px 10px 0;
+    border-color: transparent white transparent transparent;
+}
+
+.right::after {
+    left: -16px;
+}
+
+.content {
+    padding: 20px 30px;
+    background-color: white;
+    border-radius: 6px;
+}
+
+.button {
+    background-color: black;
+    color: #ffffff;
+    /* Text color on the button */
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-size: 18px;
+}
+
+.button:hover {
+    background-color: #001a33;
+    /* Background color when the mouse is over the button */
+}
+
+.button:active {
+    background-color: #004080;
+    /* Background color when the button is pressed */
+}
+
+/* Styles for Videos and Video Container */
 .video-container {
     display: flex;
     flex-wrap: wrap;
@@ -170,40 +175,48 @@
     text-align: center;
 }
 
-
-
 #rodapeButton {
     position: fixed;
     bottom: 20px;
     right: 20px;
     z-index: 999;
-	background-color: #0a0a0a;
-    /* Adicione estilos adicionais conforme necessário */
+    background-color: #0a0a0a;
+    /* Additional styles as needed */
 }
 
 footer {
     text-align: center;
     padding: 20px;
     background-color: #0a0a0a;
-    color: #fff; /* Cor do texto branco */
-    /* Adicione estilos adicionais conforme necessário */
+    color: #030303;
+    /* White text color */
+    /* Additional styles as needed */
 }
 
+/* Media Query for Tablet */
+@media only screen and (max-width: 767px) {
+    /* Add specific styles for tablets here */
+    .container {
+        width: 60%; /* Adjusted width for tablets */
+    }
+}
 
+/* Media Query for Mobile Devices */
+@media only screen and (max-width: 480px) {
+    /* Add specific styles for mobile devices here */
+    .h1 {
+        font-size: 40px; /* Adjusted font size for mobile */
+    }
 
-  
+    #experiencia h1 {
+        font-size: 2em; /* Adjusted font size for mobile */
+        margin-bottom: 50px; /* Adjusted margin as needed */
+    }
 
-
-
-  
-
-  
-
-
-
-  /* Adicione estas linhas ao seu arquivo CSS */
-
-
+    .container {
+        width: 80%; /* Adjusted width for mobile */
+    }
+}
 
   
 
@@ -212,7 +225,7 @@ footer {
   </style>
 <body>
 
-	
+	<body style="background-color: black;"></body>
 
 	<main>
 		<div id="all-menu">
@@ -773,79 +786,60 @@ footer {
 			Voltar ao Topo
 		</button>
 
-		  <!-- Botões adicionais -->
-		<button class="button" id="dashboardButton" onclick="openDashboard()">
-			<i class="fas fa-tachometer-alt"></i> Conheça Meu Portifolio
-		</button>
+		 
 
 		</section>
 
-		<!-- Botões adicionais -->
-		<button class="button" id="dashboardButton" onclick="openDashboard()">
-			<i class="fas fa-tachometer-alt"></i> Conheça Meu Portifolio
-		</button>
+		
 	
-		<button class="button" id="rodapeButton" onclick="scrollToTop()">
-			Voltar ao Topo
-		</button>
-	
-		<!-- Scripts no final do body para melhor desempenho -->
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script src="js/main.js"></script>
-<script src="js/habilidades.js"></script>
-<script src="js/timeline.js"></script>
-<script src="js/projetos.js"></script>
+	<!-- Scripts at the end of the body for better performance -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/habilidades.js"></script>
+    <script src="js/timeline.js"></script>
+    <script src="js/projetos.js"></script>
 
-<script>
-    // Adicione seus scripts personalizados aqui
-    function openDashboard() {
-        window.location.href = 'dashboard.html';
-    }
+    <script>
+        // Custom scripts
+        function openDashboard() {
+            window.location.href = 'dashboard.html';
+        }
 
-    function scrollToTop() {
-        smoothScrollTo(0, 0, 1000);
-    }
+        function scrollToTop() {
+            smoothScrollTo(0, 0, 1000);
+        }
 
-    // Função de rolagem suave semelhante à que você já possui
-    function smoothScrollTo(endX, endY, duration) {
-        const startX = window.scrollX || window.pageXOffset;
-        const startY = window.scrollY || window.pageYOffset;
-        const distanceX = endX - startX;
-        const distanceY = endY - startY;
-        const startTime = new Date().getTime();
+        // Smooth scroll function
+        function smoothScrollTo(endX, endY, duration) {
+            const startX = window.scrollX || window.pageXOffset;
+            const startY = window.scrollY || window.pageYOffset;
+            const distanceX = endX - startX;
+            const distanceY = endY - startY;
+            const startTime = new Date().getTime();
 
-        duration = typeof duration !== "undefined" ? duration : 400;
+            duration = typeof duration !== "undefined" ? duration : 400;
 
-        const easeInOutQuart = (time, from, distance, duration) => {
-            if ((time /= duration / 2) < 1)
-                return (distance / 2) * time * time * time * time + from;
-            return (
-                (-distance / 2) * ((time -= 2) * time * time * time - 2) + from
-            );
-        };
+            const easeInOutQuart = (time, from, distance, duration) => {
+                if ((time /= duration / 2) < 1)
+                    return (distance / 2) * time * time * time * time + from;
+                return (
+                    (-distance / 2) * ((time -= 2) * time * time * time - 2) + from
+                );
+            };
 
-        const timer = setInterval(() => {
-            const time = new Date().getTime() - startTime;
-            const newX = easeInOutQuart(time, startX, distanceX, duration);
-            const newY = easeInOutQuart(time, startY, distanceY, duration);
-            if (time >= duration) {
-                clearInterval(timer);
-            }
-            window.scroll(newX, newY);
-        }, 1000 / 60); // 60 fps
-    }
-</script>
-<footer>
-    <p>&copy; 2024 Sua Marca Registrada. Todos os direitos reservados.</p>
-</footer>
+            const timer = setInterval(() => {
+                const time = new Date().getTime() - startTime;
+                const newX = easeInOutQuart(time, startX, distanceX, duration);
+                const newY = easeInOutQuart(time, startY, distanceY, duration);
+                if (time >= duration) {
+                    clearInterval(timer);
+                }
+                window.scroll(newX, newY);
+            }, 1000 / 60); // 60 fps
+        }
+    </script>
 
-
+    
 </body>
-
-
-
-<footer>
-    <p>&copy; 2024 Gustavo Farias. Todos os direitos reservados.</p>
-</footer>
 
 </html>
