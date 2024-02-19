@@ -149,6 +149,38 @@
       font-size: 16px;
       line-height: 1.6;
     }
+
+
+
+
+    /* Media Query for Tablet */
+@media only screen and (max-width: 767px) {
+  /* Add specific styles for tablets here */
+  .noticias-urgentes {
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  }
+}
+
+/* Media Query for Mobile Devices */
+@media only screen and (max-width: 480px) {
+  /* Add specific styles for mobile devices here */
+  header {
+      height: 200px; /* Adjusted height for mobile */
+  }
+
+  h1 {
+      font-size: 24px; /* Adjusted font size for mobile */
+  }
+
+  img {
+      margin: 30px auto; /* Adjusted margin for mobile */
+  }
+
+  article::before,
+  article::after {
+      border: 3px solid #00a0e4; /* Adjusted border for mobile */
+  }
+}
   </style>
 </head>
 <body>
