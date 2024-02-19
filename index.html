@@ -9,35 +9,45 @@
 	<link rel="stylesheet" type="text/css" href="css/projetos.css">
 </head>
 <style>
-
-	
-	
-    /* Adicione estilos conforme necessário */
 	.habilidade {
 		cursor: pointer;
-	}
+		width: 100px; /* Largura ajustável conforme necessário */
+		height: 100px; /* Altura ajustável conforme necessário */
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		background-color: rgb(189, 48, 48); /* Fundo vermelho */
+		margin: -5px;
+		border-radius: 5px;
+		font-size: 24px; /* Tamanho da fonte ajustável conforme necessário */
+		color: #fff; /* Cor do texto branca */
+		transition: transform 0.2s;
+	  }
 
-	.clique {
+	  .h1 {
+		font-size: 80px; /* Tamanho da fonte ajustável conforme necessário */
+
+	  }
+  
+  
+	  .clique {
 		transform: scale(0.9);
 		transition: transform 0.2s;
-	}
-
-	#carrosel {
+	  }
+  
+	  #carrosel {
 		display: flex;
 		overflow: hidden;
-	}
-
-	.sombra,
-	.hidden {
-		display: none;
-	}
-
-	.visible {
+	  }
+  
+	  .sombra,
+	  .hidden {
+		display: flex; /* Mostrar todas as habilidades o tempo todo */
+	  }
+  
+	  .visible {
 		display: flex;
-	}
-
-
-
+	  }
 	  #experiencia h1 {
 		text-align: center;
 		font-size: 3em;
@@ -216,6 +226,8 @@ footer {
 					<li><a href="#habilidades">Habilidades</a></li>
 					<li><a href="#experiencia">Experiência</a></li>
 					<li><a href="#projetos">Projetos</a></li>
+					<li><a href="dashboard.html">Power Bi</a></li>
+					<li><a href="Blog.html">Noticias</a></li>
 				</ul>
 			</nav>
 
@@ -328,142 +340,101 @@ footer {
 
 
 
-		  <section id="habilidades">
-			<h1>Habilidades</h1>
-	
-			<div id="carrosel" onmouseover="showHiddenSkills()" onmouseout="hideHiddenSkills()">
-				<div class="centro" onmouseover="playAudio('CSS')">
+		  <body>
+			<section id="habilidades">
+				<h1>Habilidades</h1>
+			
+				<div id="carrosel">
+				  <div class="centro" onclick="playAudio('CSS')">
 					<div class="habilidade">
-						<p>CSS</p>
+					  <p>CSS</p>
 					</div>
 					<div class="sombra"></div>
-				</div>
-	
-				<div class="direita" onmouseover="playAudio('JS')">
+				  </div>
+			
+				  <div class="direita" onclick="playAudio('JS')">
 					<div class="habilidade">
-						<p>JS</p>
+					  <p>JS</p>
 					</div>
 					<div class="sombra"></div>
-				</div>
-	
-				<div class="esquerda" onmouseover="playAudio('HTML')">
+				  </div>
+			
+				  <div class="esquerda" onclick="playAudio('HTML')">
 					<div class="habilidade">
-						<p>HTML</p>
+					  <p>HTML</p>
 					</div>
 					<div class="sombra"></div>
-				</div>
-	
-				<!-- Adicione outras habilidades conforme necessário -->
-	
-				<div class="hidden" onmouseover="playAudio('Python')">
+				  </div>
+			
+				  <!-- Adicione outras habilidades conforme necessário -->
+			
+				  <div class="hidden" onclick="playAudio('Python')">
 					<div class="habilidade">
-						<p>Python</p>
+					  <p>Python</p>
 					</div>
 					<div class="sombra"></div>
-				</div>
-	
-				<div class="hidden" onmouseover="playAudio('Power BI')">
+				  </div>
+			
+				  <div class="hidden" onclick="playAudio('Power BI')">
 					<div class="habilidade">
-						<p>BI</p>
+					  <p>BI</p>
 					</div>
 					<div class="sombra"></div>
-				</div>
+				  </div>
+			
+				  <div class="hidden" onclick="playAudio('POO')">
+					<div class="habilidade">
+					  <p>POO</p>
+					</div>
+					<div class="sombra"></div>
+				  </div>
+			
+				  <div class="hidden" onclick="playAudio('Flask')">
+					<div class="habilidade">
+					  <p>Flask</p>
+					</div>
+					<div class="sombra"></div>
+				  </div>
+			
+				  <div class="hidden" onclick="playAudio('Django')">
+					<div class="habilidade">
+					  <p>Django</p>
+					</div>
+					<div class="sombra"></div>
+				  </div>
 
-				<div class="hidden" onmouseover="playAudio('Power BI')">
+				  <div class="hidden" onclick="playAudio('Django')">
 					<div class="habilidade">
-						<p>POO</p>
+					  <p>SQL</p>
 					</div>
 					<div class="sombra"></div>
-				</div>
+				  </div>
 
-				<div class="hidden" onmouseover="playAudio('Power BI')">
-					<div class="habilidade">
-						<p>Flask</p>
-					</div>
-					<div class="sombra"></div>
+				  
+			
+				  <!-- Adicione mais habilidades conforme necessário -->
+			
 				</div>
-
-				<div class="hidden" onmouseover="playAudio('Power BI')">
-					<div class="habilidade">
-						<p>Python</p>
-					</div>
-					<div class="sombra"></div>
-				</div>
-
-				<div class="hidden" onmouseover="playAudio('Power BI')">
-					<div class="habilidade">
-						<p>DAX</p>
-					</div>
-					<div class="sombra"></div>
-				</div>
-
-				<div class="hidden" onmouseover="playAudio('Power BI')">
-					<div class="habilidade">
-						<p>DJANGO</p>
-					</div>
-					<div class="sombra"></div>
-				</div>
-
-				<div class="hidden" onmouseover="playAudio('Power BI')">
-					<div class="habilidade">
-						<p>BIGDATA</p>
-					</div>
-					<div class="sombra"></div>
-				</div>
-
-				<div class="hidden" onmouseover="playAudio('Power BI')">
-					<div class="habilidade">
-						<p>EXCEL</p>
-					</div>
-					<div class="sombra"></div>
-				</div>
-
-				<div class="hidden" onmouseover="playAudio('Power BI')">
-					<div class="habilidade">
-						<p>Mysql</p>
-					</div>
-					<div class="sombra"></div>
-				</div>
-
-				<div class="hidden" onmouseover="playAudio('Power BI')">
-					<div class="habilidade">
-						<p>SQL</p>
-					</div>
-					<div class="sombra"></div>
-				</div>
-			</div>
-		</section>
-		<script>
-			const habilidades = document.querySelectorAll('.habilidade');
-	
-			habilidades.forEach(habilidade => {
-				habilidade.addEventListener('mouseover', () => {
+			  </section>
+			
+			  <script>
+				const habilidades = document.querySelectorAll('.habilidade');
+			
+				habilidades.forEach(habilidade => {
+				  habilidade.addEventListener('mouseover', () => {
 					habilidade.classList.add('clique');
-				});
-	
-				habilidade.addEventListener('mouseout', () => {
+				  });
+			
+				  habilidade.addEventListener('mouseout', () => {
 					habilidade.classList.remove('clique');
+				  });
 				});
-			});
-	
-			function showHiddenSkills() {
-				document.querySelectorAll('.hidden').forEach(hidden => {
-					hidden.classList.add('visible');
-				});
-			}
-	
-			function hideHiddenSkills() {
-				document.querySelectorAll('.hidden').forEach(hidden => {
-					hidden.classList.remove('visible');
-				});
-			}
-	
-			function playAudio(skill) {
-				console.log('Reproduzindo áudio para: ' + skill);
-				// Adicione aqui a lógica para reproduzir o áudio da habilidade correspondente
-			}
-		</script>
-		
+			
+				function playAudio(skill) {
+				  console.log('Reproduzindo áudio para: ' + skill);
+				  // Adicione aqui a lógica para reproduzir o áudio da habilidade correspondente
+				}
+			  </script>
 				<!-- Adicione outras habilidades escondidas aqui -->
 		
 			</div>
