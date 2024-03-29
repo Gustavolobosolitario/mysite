@@ -10,6 +10,42 @@
     <style>
 	/* Styles for Larger Screens */
 
+#habilidades {
+    position: relative;
+    overflow: hidden;
+}
+
+.video-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    pointer-events: none;
+}
+
+#video-background {
+    width: 100%;
+    height: auto;
+}
+
+.conteudo-habilidades {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 20px;
+}
+
 .habilidade {
     cursor: pointer;
     width: 100px;
@@ -18,12 +54,27 @@
     align-items: center;
     justify-content: center;
     background-color: rgb(189, 48, 48);
-    margin: -5px;
+    margin: 5px;
     border-radius: 5px;
     font-size: 24px;
     color: #fff;
     transition: transform 0.2s;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 .h1 {
     font-size: 80px; /* Adjustable font size as needed */
@@ -235,12 +286,14 @@ footer {
 
 			<nav id="menu">
 				<ul>
-					<li><a href="#apresentacao">Home</a></li>
+					
 					<li><a href="#habilidades">Habilidades</a></li>
 					<li><a href="#experiencia">Experiência</a></li>
 					<li><a href="#projetos">Projetos</a></li>
 					<li><a href="dashboard.html">Power Bi</a></li>
+					<li><a href="sites.html">Sites</a></li>
 					<li><a href="Blog.html">Noticias</a></li>
+					
 				</ul>
 			</nav>
 
@@ -254,7 +307,7 @@ footer {
 		<section id="apresentacao">
 			<div id="mascara-texto-apresentacao">
 			  <div id="texto-apresentacao">
-				<p>Olá, tudo bem?| Prazer, Gustavo Farias 😀.| Dev Fullstack, | Analista de Power BI | Desenvolvedor RPA| Dev Python.</p>
+				<p>"Olá! Eu sou Gustavo Farias, um Analista de Power BI apaixonado por transformar dados em insights valiosos. Com habilidades em RPA e Python, estou aqui para impulsionar sua jornada rumo à excelência em análise de dados. Vamos transformar números em narrativas poderosas juntos! 💡🚀"</p>
 				<a class="curriculo" href="#" onclick="window.open('Currículo l Gustavo Henrique Farias 2024.pdf');">Baixar Currículo</a>
 			  </div>
 			</div>
@@ -354,27 +407,35 @@ footer {
 
 
 		  <body>
+			
 			<section id="habilidades">
-				<h1>Habilidades</h1>
+				<div class="video-container">
+					<video autoplay muted loop id="video-background">
+						<source src="AdobeStock_624560522_Video_HD_Preview.mov" type="video/mp4">
+						<!-- Fallback para navegadores que não suportam vídeo -->
+					</video>
+				</div>
+				<div class="conteudo-habilidades">
+					<h1>Habilidades</h1>
 			
 				<div id="carrosel">
 				  <div class="centro" onclick="playAudio('CSS')">
 					<div class="habilidade">
-					  <p>CSS</p>
+					  <p>DAX</p>
 					</div>
 					<div class="sombra"></div>
 				  </div>
 			
 				  <div class="direita" onclick="playAudio('JS')">
 					<div class="habilidade">
-					  <p>JS</p>
+					  <p>M</p>
 					</div>
 					<div class="sombra"></div>
 				  </div>
 			
 				  <div class="esquerda" onclick="playAudio('HTML')">
 					<div class="habilidade">
-					  <p>HTML</p>
+					  <p>SQL</p>
 					</div>
 					<div class="sombra"></div>
 				  </div>
@@ -404,21 +465,21 @@ footer {
 			
 				  <div class="hidden" onclick="playAudio('Flask')">
 					<div class="habilidade">
-					  <p>Flask</p>
+					  <p>EXCEL</p>
 					</div>
 					<div class="sombra"></div>
 				  </div>
 			
 				  <div class="hidden" onclick="playAudio('Django')">
 					<div class="habilidade">
-					  <p>Django</p>
+					  <p>MYSQL</p>
 					</div>
 					<div class="sombra"></div>
 				  </div>
 
 				  <div class="hidden" onclick="playAudio('Django')">
 					<div class="habilidade">
-					  <p>SQL</p>
+					  <p>API</p>
 					</div>
 					<div class="sombra"></div>
 				  </div>
@@ -671,17 +732,7 @@ footer {
 				<div class="card-project-shadow"></div>
 			  </div>
 		  
-			  <div id="projeto3" class="projeto-card" onmousemove="gira_sombra(this)" onmouseleave="desgira_sombra(this)">
-				<a href="https://youtu.be/EimGLo-W0wY" target="_blank">
-				  <div class="card-project">
-					<h2>Desenvolvimento de Sites Fullstack</h2>
-					<p>
-					  Criar a experiência do usuário por meio de uma interface atraente e amigável, além de implementar a lógica de negócios e funcionalidades que tornam o site realmente poderoso.
-					</p>
-				  </div>
-				</a>
-				<div class="card-project-shadow"></div>
-			  </div>
+			  
 		  
 			  <div id="projeto4" class="projeto-card" onmousemove="gira_sombra(this)" onmouseleave="desgira_sombra(this)">
 				<a href="https://youtu.be/OnRYZ0P79ww" target="_blank">
