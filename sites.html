@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfólio de Sites Desenvolvidos</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            overflow-x: hidden;
+        }
+
+        #topo {
+            text-align: center;
+            padding: 50px 0;
+            background-color: #333;
+            color: #fff;
+        }
+
+        #mensagem-saudacao {
+            font-size: 24px;
+            margin-top: 20px;
+        }
+
+        #video-background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            object-fit: cover;
+        }
+
+        .projeto-card {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            margin: 20px;
+        }
+
+        .card-wrapper {
+            width: calc(50% - 20px); /* 50% de largura com espaço entre os quadros */
+            margin-bottom: 20px;
+        }
+
+        .card-project {
+            background-color: #f9f9f9;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .card-project h2 {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        .card-project p {
+            font-size: 16px;
+        }
+
+        .card-project-shadow {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0));
+            border-radius: 10px;
+            z-index: -1;
+            transition: transform 0.2s;
+        }
+
+        .projeto-card:hover .card-project-shadow {
+            transform: translateY(5px);
+        }
+
+        #botao-voltar {
+            text-align: center;
+            margin-top: 50px;
+        }
+        
+        #botao-voltar button {
+            padding: 10px 20px;
+            font-size: 18px;
+            background-color: #333;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        
+        #botao-voltar button:hover {
+            background-color: #555;
+        }
+
+        /* Media queries para adaptar a página a diferentes tamanhos de tela */
+        @media screen and (max-width: 768px) {
+            .card-wrapper {
+                width: 100%; /* Quadros ocupam toda a largura em telas menores */
+            }
+        }
+
+        @media screen and (max-width: 480px) {
+            #topo h1 {
+                font-size: 20px; /* Reduzindo o tamanho da fonte do título */
+            }
+
+            #mensagem-saudacao {
+                font-size: 16px; /* Reduzindo o tamanho da fonte da mensagem de saudação */
+            }
+
+            .card-project h2 {
+                font-size: 18px; /* Reduzindo o tamanho da fonte do título do projeto */
+            }
+
+            .card-project p {
+                font-size: 14px; /* Reduzindo o tamanho da fonte da descrição do projeto */
+            }
+
+            #botao-voltar button {
+                font-size: 14px; /* Reduzindo o tamanho da fonte do botão */
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Topo -->
+    <div id="topo">
+        <img src="perfil2.jpg" alt="Sua foto" style="border-radius: 50%; width: 150px; height: 150px;">
+        <h1>Seja bem-vindo ao meu portfólio de sites desenvolvidos</h1>
+        <p id="mensagem-saudacao">Confira abaixo os sites que desenvolvi:</p>
+    </div>
+
+    <!-- Vídeo de fundo -->
+    <video autoplay muted loop id="video-background">
+        <source src="BB_14c67ae0-6b26-4433-92d4-917b0cfa98ae_FPpreview.mp4" type="video/mp4">
+        Seu navegador não suporta vídeos em HTML5.
+    </video>
+
+    <!-- Projetos -->
+    <div class="projeto-card">
+        <!-- Site 1 -->
+        <div class="card-wrapper">
+            <h2>Site 1</h2>
+            <div class="card-project">
+                <iframe src="https://pcocore.github.io/boxe/" width="100%" height="300px" frameborder="0"></iframe>
+            </div>
+        </div>
+        
+        <!-- Site 2 -->
+        <div class="card-wrapper">
+            <h2>Site 2</h2>
+            <div class="card-project">
+                <iframe src="https://pcocore.github.io/Site" width="100%" height="300px" frameborder="0"></iframe>
+            </div>
+        </div>
+
+        <!-- Site 2 -->
+        <div class="card-wrapper">
+            <h2>Site 2</h2>
+            <div class="card-project">
+                <iframe src="https://gustavolobosolitario.github.io/Colegio/" width="100%" height="300px" frameborder="0"></iframe>
+            </div>
+        </div>
+        <!-- Site 2 -->
+        <div class="card-wrapper">
+            <h2>Site 2</h2>
+            <div class="card-project">
+                <iframe src="https://gustavolobosolitario.github.io/mysite" width="100%" height="300px" frameborder="0"></iframe>
+            </div>
+        </div>
+    </div>
+
+    <!-- Botão de voltar à página principal -->
+    <div id="botao-voltar">
+        <button onclick="window.location.href='index.html'">Volte à página principal</button>
+    </div>
+</body>
+</html>
